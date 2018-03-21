@@ -5,11 +5,10 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 
 /**
- * @description 无重复元素
- * [4,5,1,2,3]
+ * @description 有重复元素 [4,5,1,2,2,3,4]
  * @author Administrator
  */
-public class RotatedSortedArrayI {
+public class RotatedSortedArrayII {
 
 	static class Solution {
 		public int search(int[] nums, int target) {
@@ -29,12 +28,14 @@ public class RotatedSortedArrayI {
 					} else {
 						right = mid - 1;
 					}
-				} else {
+				} else if (nums[mid] > nums[right]) {
 					if (nums[left] <= target && nums[mid] > target) {
 						right = mid - 1;
 					} else {
 						left = mid + 1;
 					}
+				} else {
+					right--;
 				}
 			}
 			return -1;
