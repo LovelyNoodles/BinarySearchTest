@@ -1,12 +1,12 @@
-package com.algorithm.binarySearch.templateI;
+package com.algorithm.binarySearch.templateAnalysis;
 
-public class BinarySearchI {
+public class BinarySearchII {
 	int binarySearch(int[] nums, int target) {
 		if (nums == null || nums.length == 0)
 			return -1;
 
-		int left = 0, right = nums.length - 1;
-		while (left <= right) {
+		int left = 0, right = nums.length;
+		while (left < right) {
 			// Prevent (left + right) overflow
 			int mid = left + (right - left) / 2;
 			if (nums[mid] == target) {
@@ -14,11 +14,14 @@ public class BinarySearchI {
 			} else if (nums[mid] < target) {
 				left = mid + 1;
 			} else {
-				right = mid - 1;
+				right = mid;
 			}
 		}
 
-		// End Condition: left > right
+		// Post-processing:
+		// End Condition: left == right
+		if (left != nums.length && nums[left] == target)
+			return left;
 		return -1;
 	}
 }
