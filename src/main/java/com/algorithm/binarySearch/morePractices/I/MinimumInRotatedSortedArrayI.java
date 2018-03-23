@@ -1,4 +1,4 @@
-package com.algorithm.binarySearch.templateII;
+package com.algorithm.binarySearch.morePractices.I;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -8,7 +8,7 @@ import java.io.InputStreamReader;
  * @description 找出旋转有序数组最小值 [4, 5, 6, 7, 0, 1, 2], min : 0 [2, 0, 1]
  * @author Administrator
  */
-public class MinimumInRotatedSortedArray {
+public class MinimumInRotatedSortedArrayI {
 
 	static class Solution {
 		public int findMin(int[] nums) {
